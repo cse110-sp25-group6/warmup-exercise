@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Card Flip Animation</title>
+<!-- the entirity of <style> should be CSS -->
   <style>
     body {
       display: flex;
@@ -58,6 +59,7 @@
     }
   </style>
 </head>
+<!-- Need to fix this, bad code with many <div>s -->
 <body>
   <div class="card-container" onclick="flipCard(this)">
     <div class="card">
@@ -65,7 +67,7 @@
       <div class="card-back">Back Side</div>
     </div>
   </div>
-
+<!-- the entirity of <script> should be JS, only implementing one function -->
   <script>
     function flipCard(element) {
       element.classList.toggle('flipped');
