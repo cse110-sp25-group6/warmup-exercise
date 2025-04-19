@@ -15,16 +15,21 @@
     <section class="game-area">
       <article class="dealer">
         <h2>Dealer</h2>
+        <div class = "deck" id = "dealer-deck">
+          <article class="card">
+            <header class="card-front" style="color:black;">Front</header>
+            <footer class="card-back" style="color:white;">Back</footer>
+          </article>
+        </div>
         <div class="hand" id="dealer-hand">
-            <article class="card" onclick="flipCard(this)">
-                <header class="card-front" style="color:black;">Front</header>
-                <footer class="card-back" style="color:white;">Back</footer>
-            </article>
-            <article class="card" onclick="flipCard(this)">
-                <header class="card-front" style="color:black;">Front</header>
-                <footer class="card-back" style="color:white;">Back</footer>
-            </article>
-            
+          <article class="card" onclick="flipCard(this)">
+            <header class="card-front" style="color:black;">Front</header>
+            <footer class="card-back" style="color:white;">Back</footer>
+          </article>
+          <article class="card" onclick="flipCard(this)">
+            <header class="card-front" style="color:black;">Front</header>
+            <footer class="card-back" style="color:white;">Back</footer>
+          </article>
         </div>
         <p class="score" id="dealer-score">Score: 0</p>
       </article>
@@ -55,10 +60,7 @@
       <button id="new-game">New Game</button>
     </footer>
   </main>
-  <script>
-    function flipCard(element) {
-      element.classList.toggle('flipped');
-    }
+  <script src="script.js">
   </script>
 </body>
 </html>
