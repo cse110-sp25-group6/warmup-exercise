@@ -1,0 +1,17 @@
+.card-container {
+    position: relative;
+    width: 200px;
+    height: 350px;
+    background-color: beige;
+}
+
+.card {
+    position: absolute;
+    width: 180px;
+    height: 280px;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+    border: 5px solid black;
+    background-color: brown;
+
+}
