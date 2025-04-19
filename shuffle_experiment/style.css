@@ -1,8 +1,7 @@
 .card-container {
     position: relative;
-    width: 200px;
-    height: 350px;
-    background-color: beige;
+    width: 240px;
+    height: 340px;
 }
 
 .card {
@@ -12,6 +11,6 @@
     border-radius: 10px;
     transition: transform 0.5s ease-in-out;
     border: 5px solid black;
-    background-color: brown;
+    background-color: rgb(159, 79, 79);
 
 }
