@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Blackjack: Player vs Dealer</h1>
+    </header>
+
+    <section class="game-area">
+      <article class="dealer">
+        <h2>Dealer</h2>
+        <div class = "deck" id = "dealer-deck">
+          <article class="card">
+            <header class="card-front" style="color:black;">Front</header>
+            <footer class="card-back" style="color:white;">Back</footer>
+          </article>
+        </div>
+        <div class="hand" id="dealer-hand">
+          <article class="card" onclick="flipCard(this)">
+            <header class="card-front" style="color:black;">Front</header>
+            <footer class="card-back" style="color:white;">Back</footer>
+          </article>
+          <article class="card" onclick="flipCard(this)">
+            <header class="card-front" style="color:black;">Front</header>
+            <footer class="card-back" style="color:white;">Back</footer>
+          </article>
+        </div>
+        <p class="score" id="dealer-score">Score: 0</p>
+      </article>
+
+      <article class="player">
+        <h2>You</h2>
+        <div class="hand" id="player-hand">
+            <article class="card" onclick="flipCard(this)">
+                <header class="card-front" style="color:black;">Front</header>
+                <footer class="card-back" style="color:white;">Back</footer>
+            </article>
+            <article class="card" onclick="flipCard(this)">
+                <header class="card-front" style="color:black;">Front</header>
+                <footer class="card-back" style="color:white;">Back</footer>
+            </article>
+          <!-- Cards go here -->
+        </div>
+        <p class="score" id="player-score">Score: 0</p>
+        <div class="actions">
+          <button id="hit">Hit</button>
+          <button id="stand">Stand</button>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <p id="message">Click Hit or Stand to begin!</p>
+      <button id="new-game">New Game</button>
+    </footer>
+  </main>
+  <script src="script.js">
+  </script>
+</body>
+</html>

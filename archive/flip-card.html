@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Flip Animation</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #eee;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .card-container {
+      perspective: 1000px;
+      width: 200px;
+      height: 300px;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .card-container.flipped .card {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .card-front {
+      background-color: #ffffff;
+    }
+
+    .card-back {
+      background-color: #f0f0f0;
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container" onclick="flipCard(this)">
+    <div class="card">
+      <div class="card-front">Front Side</div>
+      <div class="card-back">Back Side</div>
+    </div>
+  </div>
+
+  <script>
+    function flipCard(element) {
+      element.classList.toggle('flipped');
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Flip Animation</title>
+
+<!-- the entirity of <style> should be CSS -->
+  <style>
+    /* body section is used for alignment/positioning on page */
+    body {
+      display: flex;
+      
+      justify-content: center; 
+      align-items: center;
+      height: 100vh;
+      background-color: #159209;
+      margin: 100;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Card Flip Specifics(time, style, position, etc.) */
+    .card {
+      perspective: 1000px;
+      /* OUR CUSTOM CARDS ARE 178 × 249*/
+      width: 178px;
+      height: 249px;
+      cursor: pointer;
+      transition: transform 1.0s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    /* Card Flip Function*/
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    /* General Card Details */
+    .card-front,
+    .card-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    /* 
+     * Side Specific Card Details 
+     * NOTE: I think we can use "background-image: url("");" to give custom image backgrounds
+    */
+    .card-front {
+      background-color: #ffffff;
+      background-image: url("clubs\ A.jpg") /* Professor Powell example card, delete later */
+    }
+
+    .card-back {
+      background-color: #000000;
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<!-- HTML body, calling the flipCard function onclick -->
+<body>
+  <article class="card" onclick="flipCard(this)">
+    <header class="card-front" style="color:black;">Front</header>
+    <footer class="card-back" style="color:white;">Back</footer>
+  </article>
+<!-- JS function created to flip card to backside -->
+  <script>
+    function flipCard(element) {
+      element.classList.toggle('flipped');
+    }
+  </script>
+</body>
+</html>
