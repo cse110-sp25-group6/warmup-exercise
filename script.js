@@ -3,24 +3,24 @@
 const deck = [];
 const deckVals = {}
 
-const values = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"];
-const suits = ["Heart", "Spade", "Diamond", "Club"];
+const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+const suits = ["heart", "spade", "diamond", "club"];
 
 // Loop through values and suits to create card strings
 // adds the values to a hashmap for easy value retrieval 
 for (let value of values) {
   for (let suit of suits) {
-    deck.push(value + suit);
-
+    deck.push(suit + "-" + value);
+    // suit + "-" + value + ".png"
     if (value == "jack" || value == "queen" || value == "king") {
-      deckVals[value + suit] = 10;
+      deckVals[suit + "-" + value] = 10;
     }
     else if (value == "ace") {
-      deckVals[value + suit] = "ace";
+      deckVals[suit + "-" + value] = "ace";
       // can be 1 or 11, handle and calculate later
     }
     else {
-      deckVals[value + suit] = Number(value);
+      deckVals[suit + "-" + value] = Number(value);
     }
   }
 }
@@ -46,8 +46,9 @@ function createCard(cardClass) {
   
     const header = document.createElement("header");
     header.classList.add(cardClass);
-    header.style.color = "black";
+    header.style.backgroundImage = `url(/card/${cardClass}.png)`;
     header.textContent = "Front";
+    
   
     const footer = document.createElement("footer");
     footer.classList.add("card-back");
@@ -95,7 +96,7 @@ function reloadPlayerHand(numCards) {
         return;
       }
 
-      playerHand.appendChild(createCard());
+      playerHand.appendChild(createCard(chooseCard));
     }
 } 
 
