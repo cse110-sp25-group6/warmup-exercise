@@ -63,5 +63,28 @@ function playBlackJack() {
         }
     }
 
+    const playerValue = getHandValue(playerHand);
+    const dealerValue = getHandValue(dealerHand);
 
+    let result = '';
+    if (playerValue > 21) {
+        result = 'Player busts. Dealer wins.';
+    } else if (dealerValue > 21) {
+        result = 'Dealer busts. Player wins.';
+    } else if (playerValue > dealerValue) {
+        result = 'Player wins.';
+    } else if (playerValue < dealerValue) {
+        result = 'Dealer wins.';
+    } else {
+        result = 'Push (tie).';
+    }
+
+    return {
+        playerHand,
+        dealerHand,
+        playerValue,
+        dealerValue,
+        result
+    };
 }
+
