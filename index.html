@@ -70,10 +70,15 @@
 
       const card = document.createElement("article");
       card.classList.add("card", "dealing");
+
       card.innerHTML = `
-        <header class="card-front" style="color:black;">Card</header>
-        <footer class="card-back" style="color:white;">Back</footer>
+      <div class="card-inner">
+      <header class="card-front" style="color:black;">Card</header>
+      <footer class="card-back" style="color:white;">Back</footer>
+        </div>
       `;
+
+      card.addEventListener("click", () => flipCard(card));
 
       hand.appendChild(card);
 
@@ -86,6 +91,14 @@
       document.getElementById("player-hand").innerHTML = "";
       document.getElementById("dealer-hand").innerHTML = "";
       document.getElementById("message").textContent = "Click Hit or Stand to begin!";
+    });
+
+    function flipCard(cardElement) {
+        cardElement.classList.toggle("flipped");
+      }
+
+    document.querySelectorAll(".card").forEach((card) => {
+      card.addEventListener("click", () => flipCard(card));
     });
   </script>
 
