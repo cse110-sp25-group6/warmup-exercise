@@ -1,3 +1,24 @@
+@keyframes deal {
+    0% {
+        transform: translateY(-300px) scale(0.5) rotate(-10deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.card {
+    opacity: 0;
+    transform: translateY(-300px) scale(0.5) rotate(-10deg);
+}
+
+.card.dealing {
+    animation: deal 0.7s ease-out forwards;
+}
+
 body {
     display: flex;
     justify-content: center;
