@@ -29,33 +29,32 @@ function createCard() {
 }
   
 
-function reloadDealerHand() {
+function reloadDealerHand(numCards) {
     const dealerHand = document.getElementById("dealer-hand");
 
     dealerHand.innerHTML = "";
   
-    const numCards = 2;
     for (let i = 0; i < numCards; i++) {
       dealerHand.appendChild(createCard());
     }
 }
 
-function reloadPlayerHand() {
+function reloadPlayerHand(numCards) {
     const playerHand = document.getElementById("player-hand");
 
     playerHand.innerHTML = "";
   
-    const numCards = 2;
     for (let i = 0; i < numCards; i++) {
         playerHand.appendChild(createCard());
     }
 } 
 
+// the new game button
 document.addEventListener("DOMContentLoaded", () => {
     const newGameButton = document.getElementById("new-game");
     newGameButton.addEventListener("click", function () {
-        reloadDealerHand();
-        reloadPlayerHand();
+        reloadDealerHand(2);
+        reloadPlayerHand(2);
       });
 });
   
