@@ -2,41 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Blackjack - Styled Cards</title>
-  <link rel="stylesheet" href="card_style.css">
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="card_style.css" />
 </head>
 <body>
+  <div class="table-frame">
+    <header>
+      <h1>Blackjack</h1>
+    </header>
 
-  <h1>Blackjack</h1>
+    <div class="container">
+      <main class="game-layout">
 
-  <h2>Dealer's Hand</h2>
-  <div class="hand">
-    <div class="card">
-      <div class="corner top-left">A♠</div>
-      <div class="corner bottom-right">A♠</div>
-    </div>
-    <div class="card">
-      <div class="corner top-left">??</div>
-      <div class="corner bottom-right">??</div>
+        <!-- Left: Deck -->
+        <aside class="deck-area">
+          <h2>Deck</h2>
+          <ul class="deck-stack" aria-hidden="true">
+            <li class="card-back"></li>
+            <li class="card-back stacked"></li>
+            <li class="card-back stacked deeper"></li>
+          </ul>
+        </aside>
+
+        <!-- Middle: Dealer + Player + Controls -->
+        <section class="table-area">
+          
+          <!-- Dealer's Hand -->
+          <section aria-labelledby="dealer-heading">
+            <h2 id="dealer-heading">Dealer's Hand</h2>
+            <ul class="hand">
+              <li class="card">
+                <span class="top-left">A♠</span>
+                <span class="bottom-right">♠A</span>
+              </li>
+              <li class="card">
+                <span class="top-left">??</span>
+                <span class="bottom-right">??</span>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Player's Hand -->
+          <section aria-labelledby="player-heading">
+            <h2 id="player-heading">Player's Hand</h2>
+            <ul class="hand">
+              <li class="card">
+                <span class="top-left">10♦</span>
+                <span class="bottom-right">♦10</span>
+              </li>
+              <li class="card">
+                <span class="top-left">K♥</span>
+                <span class="bottom-right">♥K</span>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Game Buttons -->
+          <nav class="controls" aria-label="Game controls">
+            <button class="game-button">Hit</button>
+            <button class="game-button">Stand</button>
+          </nav>
+
+        </section>
+      </main>
     </div>
   </div>
-
-  <h2>Player's Hand</h2>
-  <div class="hand">
-    <div class="card">
-      <div class="corner top-left">10♦</div>
-      <div class="corner bottom-right">10♦</div>
-    </div>
-    <div class="card">
-      <div class="corner top-left">K♥</div>
-      <div class="corner bottom-right">K♥</div>
-    </div>
-  </div>
-
-  <h2>Deck</h2>
-  <div class="hand">
-    <div class="deck"></div>
-  </div>
-
 </body>
 </html>

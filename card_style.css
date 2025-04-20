@@ -1,56 +1,161 @@
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #2e7d32;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+/* 🎯 NEW: Poker chip background frame */
+.table-frame {
+    background: url("Poker_border.jpg") center center no-repeat;
+    background-size: cover;
+    padding: 60px;
+    min-height: 100vh;
+    box-sizing: border-box;
   }
   
+  /* Base page styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+  }
+  
+  header {
+    margin-top: 30px;
+  }
+  
+  h1 {
+    font-size: 42px;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
+  
+  /* Centered container with space on left */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 80px;
+  }
+  
+  /* Game layout: deck on left, table on right */
+  .game-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  
+  /* Deck section */
+  .deck-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .deck-stack {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    position: relative;
+    height: 180px;
+  }
+  
+  .deck-stack .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .deck-stack .stacked {
+    top: 6px;
+    left: 6px;
+    z-index: -1;
+  }
+  
+  .deck-stack .deeper {
+    top: 12px;
+    left: 12px;
+    z-index: -2;
+  }
+  
+  /* Table play area */
+  .table-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+  
+  /* Hands */
   .hand {
+    list-style: none;
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
+    gap: 20px;
+    padding: 0;
+    margin-top: 16px;
+  }
+  
+  /* Cards */
+  .card,
+  .card-back {
+    width: 120px;
+    height: 180px;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .card {
-    width: 80px;
-    height: 120px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    background-color: white;
     color: black;
-    padding: 8px;
-    position: relative;
-  }
-  
-  .card .corner {
-    position: absolute;
     font-weight: bold;
+    font-size: 20px;
   }
   
-  .top-left {
-    top: 5px;
-    left: 8px;
+  .card .top-left,
+  .card .bottom-right {
+    position: absolute;
+    font-size: 18px;
   }
   
-  .bottom-right {
-    bottom: 5px;
-    right: 8px;
-    transform: rotate(180deg);
+  .card .top-left {
+    top: 12px;
+    left: 12px;
   }
   
-  .deck {
-    width: 80px;
-    height: 120px;
+  .card .bottom-right {
+    bottom: 12px;
+    right: 12px;
+  }
+  
+  .card-back {
     background: repeating-linear-gradient(
       45deg,
-      #444,
-      #444 10px,
+      #333,
       #333 10px,
-      #333 20px
+      #222 10px,
+      #222 20px
     );
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   }
+  
+  /* Game buttons */
+  .controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .game-button {
+    padding: 16px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: #
   
