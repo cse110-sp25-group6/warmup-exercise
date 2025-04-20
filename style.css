@@ -97,8 +97,8 @@ article {
  * NOTE: I think we can use "background-image: url("");" to give custom image backgrounds
 */
 .card-front {
-  background-color: #ffffff;
-  background-image: url("clubs\ A.jpg") /* Professor Powell example card, delete later */
+  /* background-color: #ffffff; */
+  /* background-image: url("clubs\ A.jpg") Professor Powell example card, delete later */
 }
 
 .card-back {

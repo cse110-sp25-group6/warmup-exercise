@@ -46,7 +46,10 @@ function createCard(cardClass) {
   
     const header = document.createElement("header");
     header.classList.add(cardClass);
-    header.style.backgroundImage = `url(/card/${cardClass}.png)`;
+    header.classList.add("card-front");
+    header.style.backgroundImage = `url(\"/card/${cardClass}.png\")`;
+    header.style.backgroundSize = "281%";
+    header.style.backgroundPosition = "46% 44%";
     header.textContent = "Front";
     
   
