@@ -11,7 +11,12 @@
     <header>
       <h1>Blackjack: Player vs Dealer</h1>
     </header>
-
+    <aside class="deck-area">
+      <h2>Deck</h2>
+      <div class="deck" id="deck">
+        <article class="card back-of-card"></article>
+      </div>
+    </aside>
     <section class="game-area">
       <article class="dealer">
         <h2>Dealer</h2>
@@ -53,12 +58,36 @@
     <footer>
       <p id="message">Click Hit or Stand to begin!</p>
       <button id="new-game">New Game</button>
-    </footer>
+    </footer>    
   </main>
   <script>
-    function flipCard(element) {
-      element.classList.toggle('flipped');
+    document.getElementById("hit").addEventListener("click", () => {
+      dealCard("player-hand");
+    });
+
+    function dealCard(targetId) {
+      const hand = document.getElementById(targetId);
+
+      const card = document.createElement("article");
+      card.classList.add("card", "dealing");
+      card.innerHTML = `
+        <header class="card-front" style="color:black;">Card</header>
+        <footer class="card-back" style="color:white;">Back</footer>
+      `;
+
+      hand.appendChild(card);
+
+      setTimeout(() => {
+        card.classList.remove("dealing");
+      }, 700);
     }
+
+    document.getElementById("new-game").addEventListener("click", () => {
+      document.getElementById("player-hand").innerHTML = "";
+      document.getElementById("dealer-hand").innerHTML = "";
+      document.getElementById("message").textContent = "Click Hit or Stand to begin!";
+    });
   </script>
+
 </body>
 </html>

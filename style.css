@@ -127,9 +127,45 @@ button:hover {
   background-color: #ffd700;
 }
 
-/* Footer */
 footer p {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
   
+.deck-area {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.deck {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.back-of-card {
+    background-color: #000;
+    width: 100px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+@keyframes deal {
+    0% {
+        transform: translate(-500px, -100px) scale(0.5) rotate(-10deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.card.dealing {
+    animation: deal 0.7s ease-out forwards;
+}
