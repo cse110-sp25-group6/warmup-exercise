@@ -1,8 +1,8 @@
 # 🃏 Blackjack Game - CSE110 Spring 2025
 
-Welcome to our **Blackjack Game**, a warm-up exercise project for CSE110 at UCSD!
+Welcome to our **Blackjack Game**, a warm-up exercise project for CSE110!
 
-This is a simple web-based version of the classic card game **Blackjack (21)**, created using only **HTML and CSS**. Our team focused on clean design, core gameplay functionality, and intuitive layout.
+This is a simple web-based version of the classic card game **Blackjack (21)**, created using **HTML, CSS, and JS**.
 
 ## 🎮 Live Demo
 
